@@ -25,7 +25,7 @@ function send(msg) {
         $('#socketStatus').html("working ... [<a href='#' onClick='quit()'>X</a>]");
         cmdHistory.push(msg);
         $('#log').append("<div class='cmd'>" + msg + "</div>");
-        console.log("startWs:");
+        console.log("startWs:", ws);
     } catch (err) {
         console.log(err);
         setTimeout(startWs, timeout);
@@ -90,7 +90,9 @@ $(document).ready(function() {
     console.log(e);
     if (e.keyCode != 13 /* Return */) return;
     var msg = $("#entry").attr("value").replace("\n", "");
-    if (!util.isBlank(msg)) send(msg);
+    if (!util.isBlank(msg)) {
+        send(msg);
+    }
     $("#entry").attr("value", ""); // clear the entry field.
   });
 });

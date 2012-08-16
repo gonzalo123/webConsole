@@ -28,7 +28,7 @@ function pack(num) {
   return result;
 }
 
-var sys  = require("sys"),
+var sys  = require("util"),
   net    = require("net"),
   crypto = require("crypto"),
   requiredHeaders = {
@@ -234,4 +234,3 @@ exports.createServer = function (websocketListener, options) {
     websocketListener(emitter); // emits: "connect", "data", "close", provides: write(data), end()
   });
 };
-

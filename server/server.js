@@ -1,12 +1,14 @@
-var sys   = require('sys'),
-http  = require('http'),
+var http  = require('http'),
 url   = require('url'),
 spawn = require('child_process').spawn,
 ws    = require('./ws.js');
 
 var availableComands = ['ls', 'ps', 'uptime', 'tail', 'cat'];
+
 ws.createServer(function(websocket) {
-    websocket.on('connect', function(resource) {
+    console.log('createServer');
+    websocket.addListener("connect", function (resource) {
+        console.log('Connect');
         var parsedUrl = url.parse(resource, true);
         var rawCmd = parsedUrl.query.cmd;
         var cmd = rawCmd.split(" ");
@@ -35,7 +37,7 @@ ws.createServer(function(websocket) {
                 websocket.write("ERROR");
             }
 
-            websocket.on('end', function() {
+            websocket.addListener("end", function (resource) {
                 process.kill();
             });
 

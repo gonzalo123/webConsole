@@ -1,1 +1,8 @@
 Real time web console with node.js
+
+
+This script is obsolete (only works with old versions of node.js). It uses one old library for websokets.
+IMHO is not a good idea try to fix it (feel free to do it if you want :) ). Maybe it's better to use socket.io
+
+Anyway you can see a worrking example of the script at youtube:
+http://www.youtube.com/watch?v=Q5AcZj0Mml4
