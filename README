@@ -6,3 +6,9 @@ IMHO is not a good idea try to fix it (feel free to do it if you want :) ). Mayb
 
 Anyway you can see a worrking example of the script at youtube:
 http://www.youtube.com/watch?v=Q5AcZj0Mml4
+
+I've done another version of this script. 
+https://github.com/gonzalo123/webConsole2
+
+This version is not the same. It use Symfony's Process component to run the commands and sends the output to the node.js server. 
+It uses socket.io
